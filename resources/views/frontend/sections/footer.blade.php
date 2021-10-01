@@ -41,4 +41,5 @@
 <script src="{{ asset('assets/frontend/js/lightbox.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/popper.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+@yield('scripts')
 </html>

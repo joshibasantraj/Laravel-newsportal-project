@@ -1,4 +1,5 @@
 @extends('frontend.base')
+
 @section('content')
     <section class="news-inner">
         <div class="container">

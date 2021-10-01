@@ -24,8 +24,8 @@ Route::get('/news_details/{id}',[FrontendController::class,'news_details'])->nam
 
 Auth::routes();
 
-Route::group(['middleware'=>'auth'],function(){
-    Route::get('/admin',function(){
+Route::group(['middleware'=>'auth','prefix'=>'admin'],function(){
+    Route::get('/',function(){
         return view('admin.dashboard');
     });
     Route::resource('category',CategoryController::class);

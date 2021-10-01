@@ -17,5 +17,8 @@
     <link href="{{ asset('assets/admin/css/nprogress.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
+    <!-- Adding styles for datatables -->
     <link href="{{ asset('assets/admin/css/custom.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/jquery.dataTables.min.css') }}">
+
   </head>

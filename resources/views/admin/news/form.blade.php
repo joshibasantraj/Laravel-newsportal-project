@@ -97,7 +97,7 @@
                                         <div class="form-group row">
                                             <label for="description" class="col-sm-3">Description</label>
                                             <div class="col-sm-9">
-                                            <textarea name="description" id="description"  class="form-control" cols="30" rows="10">{{ @$news->summary }}</textarea>
+                                            <textarea name="desc" id="description"  class="form-control" cols="30" rows="10">{{ @$news->summary }}</textarea>
                                              @if($errors->has('description'))
                                                     <span class="alert-danger">
                                                       {{ $errors->first('description') }}
