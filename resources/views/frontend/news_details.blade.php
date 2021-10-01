@@ -9,10 +9,12 @@
                 <p>{{ @$news_details->description }}</p>   
             </div>
             <div class="comment">
-                <h4>Comment</h4>
+                <!-- <h4>Comment</h4>
                 <textarea></textarea>
-                <input type="button" value="Comment">
+                <input type="button" value="Comment"> -->
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/news_details/{{ $news_details->id }}" data-width="" data-numposts="5"></div>
             </div>
+
             <div class="news-wrapper">
                 <div class="section-title more">
                     <h2>थप समाचार</h2>

@@ -10,4 +10,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/lightbox.min.css') }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/frontend/css/main.css') }}" />
+    
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="TUweBMnN"></script>
 </head>
