@@ -2,34 +2,36 @@
 
 @section('content')
 
-    <section class="big-news">
-        <div class="container">
-            <div class="news-details">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="big-news-img">
-                            <a href="#">
-                                <figure style="background-image: url('{{ asset('assets/frontend/images/court.jpg') }}');"></figure>
-                            </a>
+    @if(isset($sticky_news))
+        <section class="big-news">
+            <div class="container">
+                <div class="news-details">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="big-news-img">
+                                <a href="#">
+                                    <figure style="background-image: url('{{ asset('uploads/news/'.$sticky_news->image) }}');"></figure>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-sm-12">
-                        <div class="big-news-detail news-title">
-                            <h2><a href="#">निषेधित क्षेत्रविरुद्ध सर्वाेच्चमा मुद्दा दायर</a></h2>
-                            <p>
-                                <span>काठमाडौं– </span>
-                                <span>सम्बाददाता</span>
-                            </p>
-                            <p>
-                                सरकारले घोषणा गरेको निषेधित क्षेत्र खारेजीको माग गर्दै सर्वाेच्च अदालतमा मुद्दा दायर भएको छ। शुक्रबार वरिष्ठ अधिवक्ता दिनेश त्रिपाठीले माइतीघर मण्डला लगायतका  ठाउँमा प्रदर्शन गर्न नपाइने निर्णय खारेजीको माग गर्दै सर्वाेच्चमा रिट दायर गरेका हुन्। उनको मुद्दामा शुक्रबार सुनवाई हुनेछ। गृह प्रशासन सुधार योजना अन्तर्गत काठमाडौं जिल्ला प्रशासनले कार्यालयले माइतीघर मण्डलालाई निषेधित क्षेत्र घोषणा गर्दै ७ स्थानलाई प्रदर्शनस्थल तोकेको छ। गृहको निर्देशनअनुसार ७७ वटै जिल्लामा स्थानीय प्रशासनले निश्चित प्रदर्शन स्थल तोकेको छ। 
-                            </p>
-                            <span>२०७५-१०-०३, शनिबार</span>
+                        <div class="col-lg-8 col-md-6 col-sm-12">
+                            <div class="big-news-detail news-title">
+                                <h2><a href="#">{{ $sticky_news->title }}</a></h2>
+                                <p>
+                                    <span>{{ $sticky_news->location }}</span>
+                                    <span>सम्बाददाता</span>
+                                </p>
+                                <p>
+                                    {{ $sticky_news->summary }}
+                                </p>
+                                <span>{{ $sticky_news->news_date }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     @if(isset($category))
     @foreach($category as $cat)

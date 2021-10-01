@@ -28,7 +28,10 @@ class FrontendController extends Controller
         $category=$this->category->orderBy('id','DESC')->get();
         $videos=$this->video->orderBy('id','DESC')->get();
         $gallery=$this->gallery->all();
+        $sticky_news=$this->news->where('is_sticky',1)->orderBy('id','DESC')->first();
         // dd($category->news_info);
-        return view('frontend.index')->with('category',$category)->with('videos',$videos)->with('galleries',$gallery);
+        // dd($sticky_news);
+        return view('frontend.index')->with('category',$category)->with('videos',$videos)->with('galleries',$gallery)->with('sticky_news',$sticky_news);
     }
+
 }
