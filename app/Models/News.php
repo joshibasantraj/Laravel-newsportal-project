@@ -33,4 +33,8 @@ class News extends Model
         return $this->hasone('App\Models\User','id','added_by');
     }
 
+    public function category_info(){
+        return $this->belongsTo('App\Models\Category','cat_id','id');
+    }
+
 }

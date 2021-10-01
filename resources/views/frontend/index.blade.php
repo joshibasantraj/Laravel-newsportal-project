@@ -9,14 +9,14 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12">
                             <div class="big-news-img">
-                                <a href="#">
+                                <a href="{{ route('news_details',$sticky_news->id) }}">
                                     <figure style="background-image: url('{{ asset('uploads/news/'.$sticky_news->image) }}');"></figure>
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-6 col-sm-12">
                             <div class="big-news-detail news-title">
-                                <h2><a href="#">{{ $sticky_news->title }}</a></h2>
+                                <h2><a href="{{ route('news_details',$sticky_news->id) }}">{{ $sticky_news->title }}</a></h2>
                                 <p>
                                     <span>{{ $sticky_news->location }}</span>
                                     <span>सम्बाददाता</span>
@@ -38,8 +38,8 @@
             <section class="politics">
                 <div class="container">
                     <div class="section-title">
-                        <h2><a href="#">{{ $cat->title }}</a></h2>
-                        <p><a href="#">सबै हर्नुहोस् <i class="fa fa-bars" aria-hidden="true"></i></a></p>
+                        <h2><a href="{{ route('rel_news',$cat->id) }}">{{ $cat->title }}</a></h2>
+                        <p><a href="{{ route('rel_news',$cat->id) }}">सबै हर्नुहोस् <i class="fa fa-bars" aria-hidden="true"></i></a></p>
                     </div>
                     @if(isset($cat->news_info))
                         <div class="news-wrapper">
@@ -47,7 +47,7 @@
                                 <div class="col-lg-5 col-md-6 col-sm-12">
                                     <div class="politics-img-news news-title">
                                         <figure style="background-image: url('{{ asset('uploads/news/'.$cat->news_info[0]->image) }}');"></figure>
-                                        <h2><a href="#">{{ $cat->news_info[0]->title }}</a></h2>
+                                        <h2><a href="{{ route('news_details',$cat->news_info[0]->id) }}">{{ $cat->news_info[0]->title }}</a></h2>
                                     </div>
                                 </div>
                                 <div class="col-lg-7 col-md-6 col-sm-12">
@@ -58,10 +58,10 @@
                                                
                                                @foreach($cat->news_info as $news)
                                                 <div class="col-md-4">
-                                                    <a href="#"><figure style="background-image: url('{{ asset('uploads/news/'.$news->image) }}');"></figure></a>
+                                                    <a href="{{ route('news_details',$news->id) }}"><figure style="background-image: url('{{ asset('uploads/news/'.$news->image) }}');"></figure></a>
                                                 </div>
                                                 <div class="col-md-8">
-                                                    <h3><a href="#">{{ $news->title }}</a></h3>
+                                                    <h3><a href="{{ route('news_details',$news->id) }}">{{ $news->title }}</a></h3>
                                                     <p>
                                                       {{ $news->summary }} 
                                                     </p>

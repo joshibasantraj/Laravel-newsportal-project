@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[FrontendController::class,'index'])->name('my-home');
+Route::get('/news/{id}',[FrontendController::class,'news'])->name('rel_news');
+Route::get('/news_details/{id}',[FrontendController::class,'news_details'])->name('news_details');
 
 Auth::routes();
 
@@ -37,3 +40,4 @@ Route::group(['middleware'=>'auth'],function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

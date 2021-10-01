@@ -16,10 +16,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                        <li class="nav-item"><a href="{{ route('my-home') }}" class="nav-link active"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                        @if(isset($category))
                         @foreach($category as $cat)
-                            <li class="nav-item"><a href="#" class="nav-link">{{ $cat->title }}</a></li>
+                            <li class="nav-item"><a href="{{ route('rel_news',$cat->id) }}" class="nav-link {{ ( isset($cat_id) && ($cat->id == $cat_id))?'active':'' }}">{{ $cat->title }}</a></li>
                         @endforeach
                        @endif
                       
